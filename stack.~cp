@@ -1,0 +1,26 @@
+#include "TXLib.h"
+
+template <typename T> class Stack_T
+{
+  private:              
+     T ajax [];
+     int vs_counter;     
+     
+  public:   
+     Stack_T (UINT first_Value) : vs_counter (0) {} 
+     T pop  ()         {return ajax [vs_counter--];        }
+     //void push (T& value) {       ajax [vs_counter++] = value;}
+     void push (int value) {       ajax [vs_counter++] = value;}
+     
+     T top  ()         {return ajax [vs_counter];          }
+     T look (int pos ) {return ajax [pos];                 }
+};
+
+const int PUSH = 68;
+const int POP  = 61;
+const int TOP  = 41;
+const int LOOK  = 32;
+const int MUL  = 11;
+const int ADD  = 12;
+const int DIV  = 13;
+const int SUB  = 14;

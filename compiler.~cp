@@ -1,0 +1,60 @@
+#include "stack.cpp"
+
+void add (Stack_T<int>& stack)
+{
+     int first  = stack.pop ();
+     int second = stack.pop ();
+     stack.push (first + second);
+}     
+void sub (Stack_T<int>& stack)
+{
+     int first  = stack.pop ();
+     int second = stack.pop ();
+     stack.push (first - second);
+}     
+void mul (Stack_T<int>& stack)
+{
+     int first  = stack.pop ();
+     int second = stack.pop ();
+     stack.push (first * second);
+}     
+void div (Stack_T<int>& stack)
+{
+     int first  = stack.pop ();
+     int second = stack.pop ();
+     stack.push (first / second);
+}     
+
+
+
+int compiler (int vl0, int vl1)
+{
+    static Stack_T<int> stack (0);
+    switch (vl0)
+    {
+         case PUSH: stack.push (vl1);
+         case POP:  {$y cout << "Pop:" << stack.pop() << "\n";}
+         case TOP:  {$y cout << "Top:" << stack.top() << "\n";}
+         case LOOK: {$y cout << "Look:" << stack.look(vl1) << "\n";}
+         case MUL:  mul (stack);
+         case DIV:  div (stack);
+         case SUB:  sub (stack);
+         case ADD:  add (stack);
+     }
+}
+     
+
+int main (const char& argv)
+{
+    char rt [100];
+    cout << "Select File to open: "; cin >> rt;
+    FILE* pfile = fopen (rt, "r");
+    int first, last;
+    
+    while (true)
+    {
+          fscanf (pfile, "%d %d", first, last);
+          compiler (first, last);
+    }   
+}  
+    
