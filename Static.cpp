@@ -8,9 +8,9 @@
 //     ......  (C) ssDevelopment 2013
 //
 //-----------------------------------
-// THIS FILE IS COPY PASTED AND MODIFIED, SO IT DOES NOT INCLUDE ALL NEW FEATURES!!!!!!!!!!!!!!!!!!!!!!
-// SEE REAL FILE TO KNOW SOMETHING
+// THIS FILE IS COPY PASTED AND MODIFIED
 //-----------------------------------
+
 int REGNOMEYWOPOCATS = 0;
 
 template <class AbsType, int ArrayMaxSize>
